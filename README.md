@@ -14,7 +14,7 @@ July - August 2015
 * Calculates nonsense values upon user input
 * Clears input and output fields and resets page to display default options when 'Reset" button is clicked
 
-## Nonsense Calculator Files:
+## Nonsense Calculator Contents:
 * calculator.html - contains page content
 * style.css - css styling sheet
 * getMethods.js - contains functions that accesses information from DOM
