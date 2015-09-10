@@ -11,14 +11,14 @@ Objectives :
 * Explore how to handle incompatibilities between modern browsers
 July - August 2015
 
-#### Calculation formulas have been replaced with nonsense formulas and thus provides basis for name of the application.
+##### Calculation formulas have been replaced with nonsense formulas and thus provides basis for name of the application.
 
-## Nonsense Calculator:
+### Nonsense Calculator Features:
 * Updates specific textbox labels depending on option selected from top menu
 * Calculates nonsense values upon user input
 * Clears input and output fields and resets page to display default options when 'Reset" button is clicked
 
-## Nonsense Calculator Contents:
+### Nonsense Calculator Contents:
 * calculator.html - contains page content
 * style.css - css styling sheet
 * getMethods.js - contains functions that accesses information from DOM
