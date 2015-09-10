@@ -1,0 +1,236 @@
+﻿/* ADDED CUSTOMIZATION - find 'customization'*/
+body {
+   
+   -ms-transform: scale(1.2);
+   
+   -webkit-transform: scale(1.2);
+
+}
+
+
+#reset_all {
+	display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -webkit-align-items: center;
+    align-items: center;
+    /*-ms-align-items: center;*/
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+#myReset {
+    /*customization*/
+	/*width: 75px;*/
+    width: 5.3em;
+	padding: .35em;
+	background-image: linear-gradient(to bottom, #F79C64, #F37121);
+	/*background: #F37121;*/
+	border: none;
+	border-radius: 6px;
+
+	/*text style*/
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: Arial, Helvetica;
+}
+#myReset:hover {
+    /*customization*/
+    cursor: pointer;
+	background-image: linear-gradient(to bottom, #F79C64, #DB661E);
+}
+h1 {
+    /*customization*/
+    font-family: HelveticaNeue-CondensedMedium, "Helvetica Neue Condensed" , "Helvetica Condensed" , "Arial Narrow" , Arial, Sans-Serif;
+    color: #115ba8;
+    font-size: 33px;
+}
+label {
+    /*customization*/
+    font-family: Arial, Helvetica;
+    font-size: 16px;
+}
+
+#flexCenter_options {
+    display: flex;
+    display: -webkit-flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    height: 8em;
+}
+
+.top_rightAlign, #species_label {
+    float: left;
+    text-align: right;
+    margin: 0 .3em .2em 0;
+    /*margin-left: 10em;*/
+    width: 13em;
+    /*display: inline-block;*/
+}
+.top_leftAlign {
+    /*width: 10em;*/
+    margin: 0 0 .2em .3em;
+    /*margin-left: .3em;*/
+    
+}
+.model {
+    /*background-color:azure;*/
+    /*align-content: center;*/
+    /*width: 24.3em;*/
+    width: 26em;
+}
+
+select {
+    cursor: pointer;
+}
+
+
+.all {
+    margin: auto;
+    width: 100%;
+}
+#top {
+    /*padding: .5em;*/
+    margin: 3em auto 0 auto;
+    width: 51em;
+    /*width: 810px;*/
+    /*margin: 0 auto;*/
+}
+#top .top_center{
+    text-align: center;
+}
+
+/*nav not in use atm*/
+nav {
+    padding: 0 0 5em 0;
+    text-align: center;
+}
+
+
+
+/*Focus*/
+textarea:focus, input[type="number"]:focus {
+    border: 2px solid #6897B4;
+
+}
+#finshaw, #finshaw_single, 
+#beamAperture_inFinshaw {
+    display: none;
+}
+
+
+.container {
+    padding: .5em;
+    width: 51em;
+    /*width: 810px;*/
+    margin: 0 auto 3em auto;
+    /*background-color: azure;*/
+    /*height: 58em;*/
+}
+/*.model {
+    //text-align:center;
+}
+.model label {
+    //background-color: red;
+    float: left;
+    text-align: right;
+    margin-right: .3em;
+    margin-left: 10em;
+    width: 15em;
+}*/
+
+.inputcontainer, .outputcontainer {
+    /*height: 95%;*/
+    /*height: 100%;*/
+    min-height: 53em;
+    width: 45.75%;
+    padding: 1em;
+    background-color: #EDF1F5;
+    background-image: linear-gradient(to bottom, #EDF1F5, #A7BBDC 175em);
+    /* Box Shadow */
+    /* Opera */
+    /*-o-box-shadow: 0 0 25px #cccccc;*/
+    /* IE */
+    /*-ms-box-shadow: 0 0 25px #cccccc;*/
+    /* Mozilla FireFox */
+    /*-moz-box-shadow: 0 0 25px #cccccc;*/
+    /* Google Chrome */
+    /*-webkit-box-shadow: 0 0 25px #cccccc;*/
+    /* Normal */
+    /*box-shadow: 0 0 25px #cccccc;*/
+    /*margin: 0 auto 30px auto;*/
+}
+
+.inputcontainer {
+    /*width: 45.75%;*/
+    float: left;
+    border-radius: 30px 10px 10px 30px;
+
+}
+
+.outputcontainer {
+    /*width: 45.75%;*/
+    float: right;
+    border-radius: 10px 30px 30px 10px;
+
+}
+
+
+/* refer to https://css-tricks.com/child-and-sibling-selectors/ to get the below code working for lower than ie 8 */
+.input_form > div, .outputDiv > div {
+   display: -webkit-flex;
+   -webkit-justify-content: space-between;
+   /*-webkit-flex-wrap: wrap;*/
+   /*-webkit-align-items: stretch;*/
+
+   display: flex;
+   justify-content: space-between;
+   /*flex-wrap: wrap;*/
+
+   padding: .5em;
+}
+
+.input_form label, .outputcontainer label, .bases_label{
+    /*background-color: burlywood;*/
+    /*width: 250px;*/
+    width: 14em;
+}
+
+#shiftTimeS_out, #shiftTimeMin_out, #shiftTimeHr_out {
+	
+	width: 5.633em;
+}
+
+
+div .hide1, div .hide2, div .hideUncut {
+    display: none;
+}
+
+div .flex-item {
+    -webkit-flex-grow: 2;
+    flex-grow: 2;
+    text-align: center;
+    background-color: orange;
+}
+
+.input_form input, .outputcontainer input, .bases_input {
+    /*width: 100px;*/
+    width: 8em;
+    height: 1em;
+    padding: 5px 0;
+    /*background-color: red;*/
+}
+
+#beamAperture_inEchlon5, #beamAperture_inFinshaw {
+	width: 8.3em;
+	height: 1.955em;
+}
+
+.outputcontainer input {
+    border:none;
+    /*background-color: #EDF1F5;*/
+    background: transparent none !important;
+}

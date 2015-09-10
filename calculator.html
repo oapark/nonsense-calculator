@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Nonsense Calculator</title>
+    
+	
+    <!--CODE HAS NOT BEEN OPTIMIZED FOR OLDER BROWSER VERSIONS-->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- [if lt IE 9]>
+        <script script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif] -->
+    
+</head>
+
+<body onload="updateHeightsAndResetButton()" onresize="updateHeightsAndResetButton()">
+    <div class="all">
+        <div id="top">
+            <h1 class="top_center">Nonsense Calculator</h1>
+
+
+
+            <!--TO BE REMOVED IN FINAL, also remove test-->
+            <!--<div class="top_center" id="testTHIS">
+                <div id="test_all">
+                    <input type="submit" id="testAll" value="Initialize" />
+                    <input type="button" id="copyValues" value="Copy Values" />
+
+                </div>
+                <br />
+            </div>-->
+            <!--TO BE REMOVED IN FINAL, also remove test-->
+
+
+
+            <div id="flexCenter_options">
+                <div class="model" id="model">
+                    <div id="deviceModel_div">
+                        <label for="deviceModel_selection" class="top_rightAlign">Device Model:</label>
+                        <select id="deviceModel_selection" class="top_leftAlign">
+                            <option id="deviceModel_finshaw" value="finshaw" >FINSHAW</option>
+                            <option id="deviceModel_echlon5" value="echlon5" selected>ECHLON5</option>
+                        </select>
+                    </div>
+                    <label for="echlon5_species" id="species_label">Species:</label>
+                    <div id="finshaw" class="selectedFinshaw">
+                        <select id="finshaw_species" class="top_leftAlign">
+                            <option value="custom" selected>Custom</option>
+                            <option value="c_based">Carbon Based</option>
+                            <option value="s_based">Silicon Based</option>
+                            <option value="os_based">OS Based</option>
+                            <option value="single">Single</option>
+                        </select>
+                    </div>
+                    <div id="finshaw_single" class="selectedFinshaw">
+                        <label for="single_checkbox" class="top_rightAlign">Single:</label>
+                        <input type="checkbox" class="top_leftAlign" id="single_checkbox" />
+                    </div>
+                    <div id="echlon5" class="selectedEchlon5">
+                        <select id="echlon5_species" class="top_leftAlign">
+                            <option value="custom" selected>Custom</option>
+                            <option value="xenon">Xenon</option>
+                            <option value="triforce">Triforce</option>
+                            <option value="gazorpazorpian">Gazorpazorpian</option>
+                            <option value="anglo_faction">Anglo-Faction</option>
+                            <option value="grey">Grey</option>
+                            <option value="stalker">STALKER</option>
+                            <option value="bean">Bean</option>
+                            <option value="kardashian">Kardashian</option>
+                            <option value="single">Singleton</option>
+                        </select>
+                    </div>
+                    <div id="echlon5_loadTypes_div" class="selectedEchlon5">
+                        <label for="echlon5_loadTypes" class="top_rightAlign">Load Type:</label>
+                        <select id="echlon5_loadTypes" class="top_leftAlign">
+                            <option value="single" selected >Single</option>
+                            <option value="multiple" >Multiple</option>
+                            <option value="simian">Simian</option>
+                        </select>
+                    </div>
+                    <div id="reset_all">
+                        <input type="reset" value="Reset" id="myReset" name="reset_button" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+
+
+
+
+        <div class="container" id="container">
+            <div class="inputcontainer" id="inputContainer">
+                <div id="inputDiv">
+                    <form class="input_form" name="input_form">
+                        <div>
+                            <label id="beamAperture_label" for="beamAperture_inEchlon5">Beam Aperture(xm):</label>
+                            <select id="beamAperture_inFinshaw" class="selectedFinshaw">
+                                <option value="NaN">Choose One</option>
+                                <option value="250">250</option>
+                                <option value="500">500</option>
+                                <option value="800">800</option>
+                                <option value="1100">1100</option>
+                            </select>
+                            <select id="beamAperture_inEchlon5" class="selectedEchlon5">
+                                <option value="NaN">Choose One</option>
+                                <option value="100">100</option>
+                                <option value="300">300</option>
+                                <option value="500">500</option>
+                                <option value="800">800</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="vistopfPressure_in">Vistopf Pressure(xsi):</label>
+                            <input type="number" name="vf_pressure" min="0" max="570" id="vistopfPressure_in" />
+                        </div>
+                        <div>
+
+                        </div>
+
+
+                        <div>
+                            <label for="bs_ratePerSec_in">Bull-Shift Rate per Second:</label>
+                            <input type="number" name="bs_rps" min="0" step="any" id="bs_ratePerSec_in" />
+                        </div>
+                        <div>
+                            <label for="snarfCofactor_in">Snarf Cofactor:</label>
+                            <input type="number" name="snarf_cofactor" min="0" step="any" id="snarfCofactor_in" />
+                        </div>
+                        <div>
+                            <label for="fs_frequency_in">Fullo-Shift Frequency:</label>
+                            <input type="number" name="fsf-s_frequency" min="0" max="120000" id="fs_frequency_in" />
+                        </div>
+
+                        <div>
+                            <label class="bases_label" id="baseVF_label" for="baseVF_in">XAOolyphs(1.0 to 1.5):</label>
+                            <input class="bases_input" type="number" name="baseVF_in_textfield" min="1" max="2" step=".5" id="baseVF_in" />
+                        </div>
+                        <div class="hide2">
+                            <label for="baseVF_out">BaseVF:</label>
+                            <input type="number" name="baseVF_out_textfield" id="baseVF_out" disabled>
+                        </div>
+                        <div>
+                            <label class="bases_label" id="baseXS_label" for="baseXS_in">Gorp Factor(0 to 15):</label>
+                            <input class="bases_input" type="number" name="baseXS_in_textfield" min="0" max="16" step="1" id="baseXS_in" />
+                        </div>
+                        <div class="hide2">
+                            <label for="baseXS_out">BaseXS:</label>
+                            <input type="number" name="baseXS_out_textfield" id="baseXS_out" disabled>
+                        </div>
+                        <div>
+                            <label class="bases_label" id="baseN_label" for="baseN_in">N-Base(0 to 14):</label>
+                            <input class="bases_input" type="number" name="baseN_out_textfield" min="0" max="16" step="1" id="baseN_in" />
+                        </div>
+                        <div class="hide2">
+                            <label for="baseN_out">BaseN:</label>
+                            <input type="number" name="baseN_out_textfield" id="baseN_out" disabled>
+                        </div>
+
+
+                        <div>
+                            <label for="numUnattachedArticles_in">Number of Unattached Articles:</label>
+                            <input type="number" name="num_articles" min="0" id="numUnattachedArticles_in" />
+                        </div>
+
+                        
+                        <div>
+                            <label for="diameterClearance_in">Diameter Clearance:</label>
+                            <input type="number" name="diameterClearance_in_textfield" min="0" id="diameterClearance_in" />
+                        </div>
+                        <div>
+                            <label for="conscienceFactor_in">Conscience Factor:</label>
+                            <input type="number" name="conscienceFactor_in_textfield" min="0" id="conscienceFactor_in" />
+                        </div>
+                        <div>
+                            <label for="scanTime_in">Scan Time(s):</label>
+                            <input type="number" name="scanTime_in_textfield" min="0" step="any" id="scanTime_in" />
+                        </div>
+
+                        &nbsp;
+                        <div>
+                            <label for="styupidi-t_in">Styupidi-T Index:</label>
+                            <input type="number" name="styupidi-t_in_textfield" min="0" step="any" id="styupidi-t_in" />
+                        </div>
+
+                        <div>
+                            <label for="atmosHereGix_in">Atmos-Here Gix (xsi):</label>
+                            <input type="number" name="atmosHereGix_in_textfield" min="0" step="any" id="atmosHereGix_in" />
+                        </div>
+
+                        <div>
+                            <label for="atmosThereGix_in">Atmos-There Gix (xsi):</label>
+                            <input type="number" name="atmosThereGix_in_textfield" min="0" step="any" id="atmosThereGix_in" />
+                        </div>
+                        <div>
+                            <label for="atmosphereCC_in">Atmosphere Clearance Coefficient:</label>
+                            <input type="number" name="atmosphereCC_in_textfield" min="0" step="any" id="atmosphereCC_in" />
+                        </div>
+
+
+
+
+
+
+                        <div id="fin">
+                            <!--<input type="submit" value="Submit" id="mySubmit" name="calculate" />-->
+                            <!--</div>
+                            <div id="reset_div">-->
+                            <!--<input type="reset" value="Reset" id="myReset" name="reset_button" />-->
+                        </div>
+                        <!--<div id="hideUncut_toggle">
+                            <label for="hideUncut_button">No Rounding</label>
+                            <input type="submit" value="SHOW" id="toggleHideUncut" name="hideUncut_button" />
+                        </div>-->
+                        <!--<div id="hide1_toggle">
+                            <label for="hide1_button">WIP Formulas</label>
+                            <input type="button" value="SHOW" id="toggleHide1" name="hide1_button" />
+                        </div>
+                        <div id="hide2_toggle">
+                            <label for="hide2_button">Calculation Outputs</label>
+                            <input type="button" value="SHOW" id="toggleHide2" name="hide2_toggle" />
+                        </div>-->
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="outputcontainer">
+                <div class="outputDiv" id="outputDiv">
+                    <div>
+                        <label for="g_eff">Gekri Efficiency:</label>
+                        <div>
+                            <input class="reset copy" type="number" name="g_eff" id="gekriEfficiency_out" disabled>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="shift_rate">Shift Rate (events/sec):</label>
+                        <input class="reset copy" type="number" name="shift_rate" id="shiftRate_out" disabled>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="shift_time">Shift Time(s/min/hr):</label>
+                        </div>
+                        <div>
+                            <div><input class="reset copy shiftTime" type="number" name="shift_time" id="shiftTimeS_out" disabled> s</div>
+                            <div><input class="reset copy shiftTime" type="number" name="shift_time" id="shiftTimeMin_out" disabled> min</div>
+                            <div><input class="reset copy shiftTime" type="number" name="shift_time" id="shiftTimeHr_out" disabled> hr</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="ob_p">Oogly-Boogly Purity(%):</label>
+                        <input class="reset copy" type="number" name="ob_p" id="ooglyBooglyPurity" disabled>
+                    </div>
+                    
+                    <div>
+                        <label for="totShift_articles">Total Shift Based on Number of Unattached Articles:</label>
+                        <input class="reset copy" type="number" name="totShift_articles" id="totShift_articles_out" disabled>
+                    </div>
+                   
+                    <div>
+                        <label for="totScan_analTime">Total Scan Analysis Time (sec):</label>
+                        <input class="reset copy" type="number" name="totScan_analTime" id="totScanAnalTime_out" disabled>
+                    </div>
+                    <div>
+                        <label for="shiftScanTime">Shift Scan Time (sec):</label>
+                        <input class="reset copy" type="number" name="shiftScanTime" id="shiftScanTime_out" disabled>
+                    </div>
+                    <div>
+                        <label for="shift_radiation">Shift Radiation (gnu):</label>
+                        <input class="reset copy" type="number" name="shift_radiation" id="shiftRadiation_out" disabled>
+                    </div>
+                    <div>
+                        <label for="okded_load">OKDED Load:</label>
+                        <input class="reset copy" type="number" name="okded_load" id="okdedLoad_out" disabled>
+                    </div>
+                    <div>
+                        <label for="tot_spud_time">Total SPUD Time (min):</label>
+                        <input class="reset copy" type="number" name="tot_spud_time" id="totSPUDTime_out" disabled>
+                    </div>
+                    <div class="hide2">
+                        <!--VALUE CHANGES if FINSHAW OR ECHLON5-->
+                        <label for="sewopm">Slug-O-Meter:</label>
+                        <input type="number" name="sewopm" class="quo reset" value="quo" id="slugOMeter_out" disabled>
+                    </div>
+                    <div class="hide2">
+                        <!--VALUE CHANGES IF FINSHAW OR ECHLON5-->
+                        <label for="ln">Snail Home Number:</label>
+                        <input type="number" name="ln" class="quo reset" value="quo" id="snailHomeNum_out" disabled>
+                    </div>
+                    <div>
+                        <label for="g_f">Groan Factor:</label>
+                        <input class="reset copy" type="number" name="g_f" id="groanFactor_out" disabled>
+                    </div>
+                    
+                    
+                    <div>
+                        <label for="vk_umittance">Vel'Koz Umittance:</label>
+                        <input class="reset copy" type="number" name="vk_umittance" id="velkozUmittance_out" disabled>
+                    </div>
+                    <div class="hide2">
+                        <label for="ddia">Flex Un Dung Hee:</label>
+                        <input type="number" name="ddia" class="quo reset" value="quo" id="flexUnDungHee_out" disabled>
+                    </div>
+
+                    <div>
+                        <label for="flex_umittance">Flex Umittance:</label>
+                        <input class="reset copy" type="number" name="flex_umittance" id="flexUmittance_out" disabled>
+                    </div>
+                    
+                    <div class="hide2">
+                        <label for="saos">Sub Onion(microns<sup>2</sup>):</label>
+                        <input type="number" name="saos" class="quo reset" value="quo" id="subOnion_out" disabled>
+                    </div>
+                    <div class="hide2">
+                        <label for="volps">Sonic Boom:</label>
+                        <input type="number" name="volps" class="quo reset" value="quo" id="sonicBoom_out" disabled>
+                    </div>
+                    
+                    <div>
+                        <label for="flex_trimittance">Flex Trimittance:</label>
+                        <input class="reset copy" type="number" name="flex_trimittance" id="flexTrimittance_out" disabled>
+                    </div>
+                    <br />
+                    <div>
+                        <label for="can_tp">Can I guarantee su҉c̢cés̀s͘f̢ul͘ teleportation with this preset?</label>
+                        <input class="reset copy" name="can_tp" id="canTP_out" disabled>
+                    </div>
+                    <div>
+                        <label for="butternut_squash_volume">Butternut Squash Volume (xL):</label>
+                        <input class="reset copy" type="number" name="butternut_squash_volume" id="butternutSquashVolume_out" disabled>
+                    </div>
+                    <div>
+                        <label for="mncsortable">Ice Cold Water:</label>
+                        <input class="reset copy" type="number" name="mncsortable" id="iceColdWater_out" disabled>
+                    </div>
+                    <div>
+                        <label for="w_o_w">WOW:</label>
+                        <input class="reset copy" type="number" name="w_o_w" id="wow_out" disabled>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div id="extra"></div>
+
+
+    <script type="text/javascript" src="javascript/calculator.js"></script>
+    <script type="text/javascript" src="javascript/tests.js"></script>
+    <script type="text/javascript" src="javascript/getMethods.js"></script>
+    <script type="text/javascript" src="javascript/eventHandlers.js"></script>
+    <script type="text/javascript" src="javascript/updateDOM.js"></script>
+
+
+</body>
+
+</html>
+
+
+
