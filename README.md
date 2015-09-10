@@ -3,6 +3,7 @@ Internship Project :
 
 * Create a Calculator Application using HTML5, CSS3, and JavaScript.
 
+
 Objectives :
 * Learn HTML5, CSS3, and JavaScript
 * Explore how to modularize code into units
